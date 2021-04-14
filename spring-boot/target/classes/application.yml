@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /api/v1
+
+spring:
+  application:
+    name: currency-exchange
+  jpa:
+    generate-ddl: true
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/curex?stringtype\=unspecified
+    username: postgres
+    password: 1234
+
+flyway:
+  user: postgres
+  password: 1234
+
+openexchangerates:
+  appId: ${APP_ID}
+  baseUrl: https://openexchangerates.org/api/latest.json
+
+springdoc:
+  api-docs:
+    path: /api-json
+  swagger-ui:
+    path: /api-view #go to localhost:8080/api/v1/api/view
